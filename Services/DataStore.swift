@@ -22,6 +22,6 @@ class DataStore {
     
     static let shared = DataStore(nameArray: ["Иван", "Петр", "Николай", "Александр"],
                                   surnameArray: ["Лаптев", "Сидоров", "Петров", "Иванов"],
-                                  emailArray: ["123@gmail.com", "sid@gmail.com", "ione@gmail.com", "mary@mail.ru"],
-                                  phoneNumberArray: ["988334", "233552", "0234456", "543123"])
+                                  emailArray: ["123@gmail.com", "456@gmail.com", "789@gmail.com", "321@mail.ru"],
+                                  phoneNumberArray: ["988-33-44", "233-55-42", "023-44-56", "543-12-34"])
 }

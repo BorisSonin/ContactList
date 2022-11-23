@@ -78,17 +78,52 @@
             </objects>
             <point key="canvasLocation" x="1211" y="-368"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="l0f-Q0-YGs">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="5tq-GY-pTR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7a8-uO-PEQ">
+                <viewController modalPresentationStyle="fullScreen" id="5tq-GY-pTR" customClass="DetailViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7a8-uO-PEQ" customClass="Det">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CpL-8G-kJN">
+                                <rect key="frame" x="16" y="155" width="361" height="90.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjZ-jM-TW4">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWP-7C-jbF">
+                                        <rect key="frame" x="0.0" y="40" width="361" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri4-Ye-XqV">
+                                        <rect key="frame" x="0.0" y="70.333333333333343" width="361" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="65J-xy-atT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CpL-8G-kJN" firstAttribute="top" secondItem="65J-xy-atT" secondAttribute="top" id="OsJ-aV-cQ1"/>
+                            <constraint firstItem="65J-xy-atT" firstAttribute="trailing" secondItem="CpL-8G-kJN" secondAttribute="trailing" constant="16" id="WbB-JX-Q6A"/>
+                            <constraint firstItem="CpL-8G-kJN" firstAttribute="leading" secondItem="65J-xy-atT" secondAttribute="leading" constant="16" id="vee-4D-xUI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Sb0-HT-0qF"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="Ri4-Ye-XqV" id="lQT-NV-wA6"/>
+                        <outlet property="fullNameLabel" destination="JjZ-jM-TW4" id="kIG-HR-MZn"/>
+                        <outlet property="phoneNumberLabel" destination="oWP-7C-jbF" id="cV3-NN-YEp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lne-gx-CVR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

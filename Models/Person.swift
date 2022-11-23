@@ -17,14 +17,46 @@ struct Person {
         "\(name) \(surname)"
     }
 }
-  
+
 extension Person {
     static func getList() -> [Person] {
-        return [Person(name: DataStore.shared.nameArray.randomElement()!, surname: DataStore.shared.surnameArray.randomElement()!, email: DataStore.shared.emailArray.randomElement()!, phone: DataStore.shared.phoneNumberArray.randomElement()!),
-                Person(name: DataStore.shared.nameArray.randomElement()!, surname: DataStore.shared.surnameArray.randomElement()!, email: DataStore.shared.emailArray.randomElement()!, phone: DataStore.shared.phoneNumberArray.randomElement()!),
-                Person(name: DataStore.shared.nameArray.randomElement()!, surname: DataStore.shared.surnameArray.randomElement()!, email: DataStore.shared.emailArray.randomElement()!, phone: DataStore.shared.phoneNumberArray.randomElement()!),
-                Person(name: DataStore.shared.nameArray.randomElement()!, surname: DataStore.shared.surnameArray.randomElement()!, email: DataStore.shared.emailArray.randomElement()!, phone: DataStore.shared.phoneNumberArray.randomElement()!)
-        ]
+        var names = DataStore.shared.nameArray
+        var surnames = DataStore.shared.surnameArray
+        var emails = DataStore.shared.emailArray
+        var phones = DataStore.shared.phoneNumberArray
+        
+        var persons = [Person]()
+        
+        for _ in 1...names.count {
+            var nameValue = ""
+            var surnameValue = ""
+            var emailValue = ""
+            var phoneValue = ""
+            
+            if let nameIndex = names.indices.randomElement() {
+                nameValue = names.remove(at: nameIndex)
+            }
+            
+            if let surnameIndex = surnames.indices.randomElement() {
+                surnameValue = surnames.remove(at: surnameIndex)
+            }
+            
+            if let emailIndex = emails.indices.randomElement() {
+                emailValue = emails.remove(at: emailIndex)
+            }
+            
+            if let phoneIndex = phones.indices.randomElement() {
+                phoneValue = phones.remove(at: phoneIndex)
+            }
+            
+            persons.append(Person(name: nameValue,
+                                  surname: surnameValue,
+                                  email: emailValue,
+                                  phone: phoneValue))
+            
+        }
+        return persons
+        
     }
+    
 }
-
