@@ -20,14 +20,13 @@ struct Person {
 
 extension Person {
     static func getList() -> [Person] {
-        var names = DataStore.shared.nameArray
-        var surnames = DataStore.shared.surnameArray
-        var emails = DataStore.shared.emailArray
-        var phones = DataStore.shared.phoneNumberArray
-        
+        var names = DataStore.shared.names
+        var surnames = DataStore.shared.surnames
+        var emails = DataStore.shared.emails
+        var phones = DataStore.shared.phoneNumbers
         var persons = [Person]()
         
-        for _ in 1...names.count {
+        for _ in 0..<names.count {
             var nameValue = ""
             var surnameValue = ""
             var emailValue = ""

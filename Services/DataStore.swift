@@ -8,20 +8,21 @@
 import Foundation
 
 class DataStore {
-    var nameArray = [String]()
-    var surnameArray = [String]()
-    var emailArray = [String]()
-    var phoneNumberArray = [String]()
+    var names = [String]()
+    var surnames = [String]()
+    var emails = [String]()
+    var phoneNumbers = [String]()
     
-    init(nameArray: [String], surnameArray: [String], emailArray: [String], phoneNumberArray: [String]) {
-        self.nameArray = nameArray
-        self.surnameArray = surnameArray
-        self.emailArray = emailArray
-        self.phoneNumberArray = phoneNumberArray
+    init(names: [String], surnames: [String], emails: [String], phoneNumbers: [String]) {
+        self.names = names
+        self.surnames = surnames
+        self.emails = emails
+        self.phoneNumbers = phoneNumbers
     }
     
-    static let shared = DataStore(nameArray: ["Иван", "Петр", "Николай", "Александр"],
-                                  surnameArray: ["Лаптев", "Сидоров", "Петров", "Иванов"],
-                                  emailArray: ["123@gmail.com", "456@gmail.com", "789@gmail.com", "321@mail.ru"],
-                                  phoneNumberArray: ["988-33-44", "233-55-42", "023-44-56", "543-12-34"])
+    static let shared = DataStore(names: ["Иван", "Петр", "Николай", "Александр"],
+                                  surnames: ["Лаптев", "Сидоров", "Петров", "Иванов"],
+                                  emails: ["123@gmail.com", "456@gmail.com", "789@gmail.com", "321@mail.ru"],
+                                  phoneNumbers: ["988-33-44", "233-55-42", "023-44-56", "543-12-34"])
+    private init() {}
 }

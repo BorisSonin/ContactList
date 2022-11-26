@@ -12,7 +12,6 @@ class ContactsViewController: UITableViewController {
     private var contactList = Person.getList()
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
         contactList.count
     }
 

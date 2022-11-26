@@ -9,9 +9,6 @@ import UIKit
 
 class SecondContactsViewController: UITableViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     private var secondContactList = Person.getList()
     
@@ -20,11 +17,11 @@ class SecondContactsViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return secondContactList.count
+      secondContactList.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return secondContactList[section].fullName
+     secondContactList[section].fullName
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,6 +39,10 @@ class SecondContactsViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
